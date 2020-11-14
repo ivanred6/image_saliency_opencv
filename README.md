@@ -28,11 +28,14 @@ $ python
 ```
 
 ## Method One: Static Saliency
-`**Code**` for this section can be found in `static_saliency.py`.
+**`Code`** for this section can be found in `static_saliency.py`.
 
 
 ## Method Two: Objectness Saliency
 **`Code`** for this section can be found in `objectness_saliency.py`.
+![Objectness Saliency Output (Girl)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/girl_grid_output.png)
+
+
 
 ## Method Three: Motion Saliency 
 ##### (To be Confirmed, not yet implemented)
