@@ -29,6 +29,27 @@ $ python
 
 ## Method One: Static Saliency
 **`Code`** for this section can be found in `static_saliency.py`.
+### First Algorithm / Method
+#### _NB: Static Saliency Method here comes from [Montabone and Soto's 2010 work](https://github.com/ivanred6/image_saliency_opencv/blob/master/papers_for_background/Human%20detection%20using%20mobile%20platform%20and%20novel%20features%20derived%20from%20a%20visual%20saliency%20mechanism.pdf)_
+Required packages include `argparse` and of course `OpenCV`.
+First, the code imports the desired image (as specified in the command line argument). Then, using the `cv2.saliency` module and calling the `StaticSaliencySpectralResidual_create()` method, a static spectral residual `saliency` object is instantiated. We then invoke the `computeSaliency` method and pass in our image. As a result, we produce a `saliencyMap`, namely a floating point grayscale image highlighting the most prominent salient regions of the image. Floating point values in this case are &#8712;_\[0,1\]_ with values closer to 1 being "interesting" and those closer to 0 being "not so interesting". 
+
+Now, as I'm sure you've worked out by now, images aren't displayed in the range x &#8712;_\[0,1\]_, rather they use the range x &#8712;_\[0,255\]_ (for 8-bit images). Therefore, we scale the image values to do this and then display both.
+
+### Second Algorithm / Method
+#### _NB: Fine Grained Static Saliency Method, coming from [Hou and Zhang's 2007 CVPR paper](https://github.com/ivanred6/image_saliency_opencv/blob/master/papers_for_background/SaliencyDetection%20A%20Spectral%20Residual%20Approach.pdf)_ 
+This second sub-method begins entirely the same as our first one above, with the exception that we're choosing to create a more fine-grained object. Also, we'll perform a threshold to demonstrate a binary map that we could perhaps process for contours. This may be used to extract each salient region, for example.
+
+Using the `StaticSaliencyFineGrained_create()` method we instantiate the fine grained static `saliency` object, before then again computing our `saliencyMap`. OpenCV has been implemented in differing ways for fine-grained vs. spectral saliency. This time, we already have scaled values in the range x &#8712;_\[0,255\]_ so we can display the image as processed. Then, our method computes a binary threshold image to help find likely object region contours. 
+
+###### Taking it further...
+Beyond the processing reached above in the Second Partial Method, one might choose to perform a series of erosions and dilations [morphological operations](https://www.mathworks.com/help/images/morphological-filtering.html#:~:text=Dilate%2C%20erode%2C%20reconstruct%2C%20and,other%20pixels%20in%20its%20neighborhood.) prior to finding and extracting contours. This hasn't been undertaken in this mini-project, but may serve to be an extension in future. 
+
+### Results
+insert here mateyboi
+
+
+
 
 
 ## Method Two: Objectness Saliency
