@@ -33,6 +33,16 @@ $ python
 
 ## Method Two: Objectness Saliency
 **`Code`** for this section can be found in `objectness_saliency.py`.
+### Algorithm / Method
+First, the necessary packages are imported including `numpy`, `argparse` and `OpenCV`. 
+The program then loads a given `image` given as an argument (see below) into memory, before then initialising the `objectness saliency` detector and establishing the training path. The `saliencyMap` computation of objectness is then undertaken. As a result, the program is then able to iterate through each detector model, performing in this loop:
+* Extract the bounding box coordinates
+* Copy image for display purposes and assign a random colour for the bounding box
+* Show output image for given detector model
+
+**CLI Usage:** `python objectness_saliency.py [-h] -m MODEL -i IMAGE [-n MAX_DETECTIONS] -d DIFF [-a HERE]`
+
+### Results
 ![Objectness Saliency Output (Girl)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/girl_grid_output.png)
 
 As shown in the above output sample, we see an image of a girl having been processed by the 10 Objectness Saliency Detectors with pseudorandomly coloured bounding boxes highlighting areas deemed to be most likely _proposals_ as mentioned above. Upon inspection, these proposals include areas of the image with the sharpest changes in colour and contour, although the detector sadly does not inform us of the rationale behind proposal selection. Thus, we find this to be a good foundational processor, with these proposals passable to a classifier or other object detection algorithm to make further predictions. Notably, this is less computationally expensive than applying [Sliding Windows](https://pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/) or [Image Pyramids](https://pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/).
