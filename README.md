@@ -26,3 +26,12 @@ $ python
 >>> cv2.saliency
 <module 'cv2.saliency'>
 ```
+
+## Method One: Static Saliency
+
+
+
+## Method Two: Objectness Saliency
+
+## Method Three: Motion Saliency 
+##### (To be Confirmed, not yet implemented)
