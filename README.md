@@ -42,7 +42,7 @@ This second sub-method begins entirely the same as our first one above, with the
 
 Using the `StaticSaliencyFineGrained_create()` method we instantiate the fine grained static `saliency` object, before then again computing our `saliencyMap`. OpenCV has been implemented in differing ways for fine-grained vs. spectral saliency. This time, we already have scaled values in the range x &#8712;_\[0,255\]_ so we can display the image as processed. Then, our method computes a binary threshold image to help find likely object region contours. 
 
-###### Taking it further...
+##### Taking it further...
 Beyond the processing reached above in the Second Partial Method, one might choose to perform a series of erosions and dilations [morphological operations](https://www.mathworks.com/help/images/morphological-filtering.html#:~:text=Dilate%2C%20erode%2C%20reconstruct%2C%20and,other%20pixels%20in%20its%20neighborhood.) prior to finding and extracting contours. This hasn't been undertaken in this mini-project, but may serve to be an extension in future. 
 
 ### Results
