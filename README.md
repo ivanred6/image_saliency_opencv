@@ -49,11 +49,11 @@ Beyond the processing reached above in this method, one might choose to perform 
 insert here mateyboi
 ![Input Image (Boat)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_original.png) 
 
-![Input Image (Boat)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_saliency.png) 
+![Saliency Image Result](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_saliency.png) 
 
-![Input Image (Boat)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_thresh.png) 
+![Threshold Image](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_thresh.png) 
 
-![Input Image (Boat)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_lowfi_image_saliency.png) 
+![Low Fidelity Spectral Saliency Image](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_lowfi_image_saliency.png) 
 
 
 ## Method Two: Objectness Saliency
