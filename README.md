@@ -35,6 +35,7 @@ $ python
 **`Code`** for this section can be found in `objectness_saliency.py`.
 ![Objectness Saliency Output (Girl)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/girl_grid_output.png)
 
+As shown in the above output sample, we see an image of a girl having been processed by the 10 Objectness Saliency Detectors with pseudorandomly coloured bounding boxes highlighting areas deemed to be most likely _proposals_ as mentioned above. Upon inspection, these proposals include areas of the image with the sharpest changes in colour and contour, although the detector sadly does not inform us of the rationale behind proposal selection. Thus, we find this to be a good foundational processor, with these proposals passable to a classifier or other object detection algorithm to make further predictions. Notably, this is less computationally expensive than applying [Sliding Windows](https://pyimagesearch.com/2015/03/23/sliding-windows-for-object-detection-with-python-and-opencv/) or [Image Pyramids](https://pyimagesearch.com/2015/03/16/image-pyramids-with-python-and-opencv/).
 
 
 ## Method Three: Motion Saliency 
