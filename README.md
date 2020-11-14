@@ -46,14 +46,16 @@ Using the `StaticSaliencyFineGrained_create()` method we instantiate the fine gr
 Beyond the processing reached above in this method, one might choose to perform a series of erosions and dilations [morphological operations](https://www.mathworks.com/help/images/morphological-filtering.html#:~:text=Dilate%2C%20erode%2C%20reconstruct%2C%20and,other%20pixels%20in%20its%20neighborhood.) prior to finding and extracting contours. This hasn't been undertaken in this mini-project, but may serve to be an extension in future. 
 
 ### Results
-insert here mateyboi
+For the first method, we see below the chosen input image consisting of a motoryacht close to the shore during the daytime. There are reflections, varied surfaces and textures, and other complex details. 
 ![Input Image (Boat)](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_original.png) 
-
+Having applied the algorithm described in the First Algorithm above, we see the image below being produced, which is a Spectral Saliency image of a fairly poor level of fidelity and clarity. This evidently isn't performing well, although it's clear where our object (the motoryacht) is, within the image as it's noticeably higher intensity (per pixel) than the other image regions.
+![Low Fidelity Spectral Saliency Image](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_lowfi_image_saliency.png) 
+Extending beyond the initial algorithm we see an improvement when deploying the Fine Grained static saliency detector, with far clearer depiction of our object, and other image details throughout. Reflections in the windows of the boat are distinguishable in this saliency map image, really showing the granularity off. 
 ![Saliency Image Result](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_saliency.png) 
-
+Finally, our object is shown below in the thresholded image very clearly, as well as the secondary region of potential interest (namely, the cliffs behind the boat). Using this image as input for an object classifier would be a good starting point if wishing to detect objects such as boats, in a maritime scanning context - using images captured perhaps by another boat as input. The boat in our image takes up a relatively large portion of the field of view, however if taken from afar (by sea or air) it would occupy a significantly smaller percentage of available pixels and, against the ocean/sky view, would need far less processing using this method than alternatives described. 
 ![Threshold Image](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_image_thresh.png) 
 
-![Low Fidelity Spectral Saliency Image](https://github.com/ivanred6/image_saliency_opencv/blob/master/output/example_lowfi_image_saliency.png) 
+
 
 
 ## Method Two: Objectness Saliency
