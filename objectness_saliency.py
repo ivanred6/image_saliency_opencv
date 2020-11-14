@@ -12,10 +12,10 @@ ap.add_argument("-i", "--image", required=True,
 	help="path to input image")
 ap.add_argument("-n", "--max-detections", type=int, default=10,
 	help="maximum # of detections to examine")
-args = vars(ap.parse_args())
+
 ap.add_argument("-d", "--diff", required=True, help="Differentiator")
 ap.add_argument("-a", "--here", required=False, help="Ignores SaveTo and uses CWD to save output")
-
+args = vars(ap.parse_args())
 # Load our input image
 image = cv2.imread(args["image"])
 
