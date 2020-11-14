@@ -13,7 +13,7 @@ Applications of saliency detection may also be applied to other aspects of compu
 ### Saliency Detection Algorithm Variants
 1. **Static Saliency**: Relies on image features and statistics to focus and localise on the most prominent image regions.
 1. **Motion Saliency**: Typically these rely on video or frame-by-frame input data. Frames are processed, tracking objects that appear to "_move_", with these considered salient.
-1. **Objectness**: Saliency Detection algorithms computing "_objectness_" generate a set of "_proposals_" - these are fundamentally just 'bounding boxes' of where objects are thought to exist within an image. 
+1. **Objectness Saliency**: Saliency Detection algorithms computing "_objectness_" generate a set of "_proposals_" - these are fundamentally just 'bounding boxes' of where objects are thought to exist within an image. 
 
 **Bear in mind - object detection is `not` the same as computing saliency.** 
 > The SD algorithm has _no idea_ if the image contains an object of a given type, or not. Rather, it reports areas where it "_thinks_" objects reside within, meaning other processing systems (such as humans, or other algorithms) are responsible for classifying and making any decisions based on this classification/prediction. One benefit of SDs are their speed - useful for real-time applications where we wouldn't be able, or want, to run computationally expensive algorithms over all pixels in all image frames.
@@ -28,10 +28,11 @@ $ python
 ```
 
 ## Method One: Static Saliency
-
+`Code` for this section can be found in `static_saliency.py`.
 
 
 ## Method Two: Objectness Saliency
+`Code` for this section can be found in `objectness_saliency.py`.
 
 ## Method Three: Motion Saliency 
 ##### (To be Confirmed, not yet implemented)
