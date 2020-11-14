@@ -1,12 +1,20 @@
 import argparse
 import cv2
+import os
+
 
 # We first build the argument parser, then parse args...
 parser = argparse.ArgumentParser()
 parser.add_argument("-i", "--image", required=True, help="Path to input image")
 parser.add_argument("-o", "--save_to", required=True, help="Path to save image excluding the saliencyType")
 parser.add_argument("-d", "--diff", required=True, help="Differentiator")
+parser.add_argument("-a", "--here", required=False, help="Ignores SaveTo and uses CWD to save output")
 args = vars(parser.parse_args())
+
+if args["here"] == "True":
+    args["save_to"] = os.getcwd() + "/output/"
+
+
 
 # Load our input image
 img = cv2.imread(args["image"])
